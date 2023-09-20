@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 # receive http requests: "i need a code review buddy"
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return 'Good morning sunshine the earth says hello'
+def index():
+    return render_template('index.html')
 
 # mock data
 git_users = []
