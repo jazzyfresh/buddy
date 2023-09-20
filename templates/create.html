@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h3>Enter your github username to be assigned a group</h3>
+  <form action="create" method="post">
+    <label for="username">Github Username</label>
+    <input type="text" 
+           name="username"
+           value="{{ request.form['title'] }}" />
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FlaskBlog</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
   <h1>Code Review Buddies</h1>
-  <h3>Enter your github username to be assigned a group</h3>
-  <form action="post">
-    <label for="username">Github Username</label>
-    <input type="text" 
-           name="username"
-           value="{{ request.form['title'] }}" />
-    <button type="submit">Submit</button>
-  </form>
-</body>
-</html>
+  {% for user in group_assignments %}
+    <div class='user'>
+      <h3>{{ user }}: {{ group_assignments[user] }}</h3>
+    </div>
+  {% endfor %}
+{% endblock %}
+
