@@ -1,6 +1,13 @@
+from flask import Flask
 
 # receive http requests: "i need a code review buddy"
+app = Flask(__name__)
 
+@app.route('/')
+def hello():
+    return 'Good morning sunshine the earth says hello'
+
+# mock data
 git_users = []
 git_users.append("jazzyfresh")
 git_users.append("rtoal")
